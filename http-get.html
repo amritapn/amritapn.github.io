@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="app.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">	
+</head>
+<body>	 
+ 
+<div class="container">
+<h3>Search your Github User name to get the details</h3>
+	<div ng-app="myApp" ng-controller="myController">
+		<form class="navbar-form" role="search">
+			<div class="input-group add-on col-md-6">
+				<input class="form-control" placeholder="Search" ng-model="firstName" type="text">
+				<div class="input-group-btn">
+					<button class="btn btn-default" ng-click="search1()">Click</button>
+				</div>
+			</div>
+	    </form>
+		<div ng-repeat="row in jsondata" ng-init="myVar = 'https://github.com/'">
+			<div class="col-md-3 col-sm-3">
+				<a ng-href="{{myVar}}{{row.login}}">{{row.login}}<br>
+				<img ng-src="{{row.avatar_url}}" style="height:200px;width:250px;">	</a>
+			</div>
+	    </div>
+	</div>
+</div>
+</body>
+
+</html>  
